@@ -1,0 +1,31 @@
+{
+  "extends": "../../tsconfig.json",
+  "exclude": [
+    "./dist/**"
+  ],
+  "include": [
+    "src"
+  ],
+  "compilerOptions": {
+    "outDir": "./dist",
+    "lib": [
+      "ESNext"
+    ],
+    "target": "es2020",
+    "module": "esnext",
+    "importHelpers": true,
+    "declaration": true,
+    "sourceMap": true,
+    "strict": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true
+  }
+}

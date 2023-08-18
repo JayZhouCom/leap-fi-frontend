@@ -1,0 +1,22 @@
+{
+  "name": "leap-fi-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "@app/leap-fi",
+    "packages/*"
+  ],
+  "packageManager": "pnpm@8.5.0",
+  "scripts": {
+    "dev": "pnpm run --parallel dev",
+    "build:sdk": "pnpm -F @leap-fi/sdk-handler run build",
+    "clean": "rm -rf node_modules && pnpm -r clean",
+    "refresh": "pnpm clean && pnpm install"
+  },
+  "keywords": [],
+  "author": "Mark Tang",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/node": "20.5.0"
+  }
+}
