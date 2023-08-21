@@ -1,4 +1,5 @@
-import { getDefaultWallets } from '@rainbow-me/rainbowkit';
+import { connectorsForWallets } from '@rainbow-me/rainbowkit';
+import { okxWallet, metaMaskWallet, coinbaseWallet, injectedWallet, walletConnectWallet, rainbowWallet } from '@rainbow-me/rainbowkit/wallets';
 import {
   Chain,
   configureChains,
@@ -70,11 +71,18 @@ export const { chains, publicClient } = configureChains(SUPPORT_CHAINS, [
   })
 ])
 
-const { connectors } = getDefaultWallets({
-  appName: "LeapFI",
-  projectId: PROJECT_ID,
-  chains
-});
+const connectors = connectorsForWallets([
+  {
+    groupName: 'Recommended',
+    wallets: [
+      metaMaskWallet({ projectId: PROJECT_ID, chains }),
+      okxWallet({ projectId: PROJECT_ID, chains }),
+      rainbowWallet({ projectId: PROJECT_ID, chains }),
+      walletConnectWallet({ projectId: PROJECT_ID, chains }),
+      coinbaseWallet({ appName: 'LeapFI', chains })
+    ],
+  },
+]);
 
 const wagmiConfig = createConfig({
   autoConnect: false,
