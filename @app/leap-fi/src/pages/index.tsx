@@ -1,6 +1,6 @@
 import { Inter } from 'next/font/google'
-import { ConnectButton } from '@rainbow-me/rainbowkit'
 import { test } from '@leap-fi/sdk-handler'
+import ConnectButton from '@app/components/ConnectButton'
 
 const inter = Inter({ subsets: ['latin'] })
 
